@@ -1,0 +1,8 @@
+{
+  "name": "theway",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "1e9ff3a4"
+}
