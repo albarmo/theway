@@ -1,0 +1,23 @@
+.menu-grid-container {
+  padding: 10px;
+}
+.menu-box {
+  background-color: darkblue;
+}
+
+ion-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 50px;
+  color: #fff;
+}
+
+ion-icon {
+  font-size: 20px;
+}
+
+.menu-grid-item-icon {
+  color: '#1C6EEB';
+}
