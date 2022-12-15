@@ -1,6 +1,8 @@
+import React from 'react'
 import { Route } from 'react-router-dom'
 import {
   IonApp,
+  IonBadge,
   IonIcon,
   IonRouterOutlet,
   IonTabBar,
@@ -9,11 +11,10 @@ import {
   setupIonicReact,
 } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
-import { home, heart, flag, person } from 'ionicons/icons'
-import Tab1 from './pages/Tab1'
+import { home, heart, flag, person, addCircle } from 'ionicons/icons'
+import Homepage from './pages/Homepage'
 import Tab2 from './pages/Tab2'
 import Tab3 from './pages/Tab3'
-import Splash from './pages/Splash'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css'
@@ -41,30 +42,37 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
-            <Tab1 />
+          <Route exact path="/">
+            <Homepage />
           </Route>
-          <Route exact path="/tab2">
+          <Route exact path="/liked">
             <Tab2 />
           </Route>
-          <Route path="/tab3">
+          <Route path="/add">
             <Tab3 />
           </Route>
-          <Route exact path="/">
-            <Splash />
+          <Route path="/plan">
+            <Tab3 />
+          </Route>
+          <Route exact path="/profile">
+            <Tab3 />
           </Route>
         </IonRouterOutlet>
-        <IonTabBar slot="bottom" color={'light'}>
-          <IonTabButton tab="tab1" href="/tab1">
+        <IonTabBar slot="bottom">
+          <IonTabButton tab="home" href="/">
             <IonIcon icon={home} />
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
+          <IonTabButton tab="liked" href="/liked">
             <IonIcon icon={heart} />
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={flag} />
+          <IonTabButton tab="add" href="/add">
+            <IonIcon icon={addCircle} size="large" />
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/">
+          <IonTabButton tab="plan" href="/plan">
+            <IonIcon icon={flag} />
+            <IonBadge>6</IonBadge>
+          </IonTabButton>
+          <IonTabButton tab="profile" href="/profile">
             <IonIcon icon={person} />
           </IonTabButton>
         </IonTabBar>

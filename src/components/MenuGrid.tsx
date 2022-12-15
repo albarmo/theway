@@ -13,7 +13,7 @@ const MenuGrid: React.FC = () => {
     <div className="menu-grid-container">
       <IonGrid>
         <IonRow>
-          <IonCol>
+          <IonCol className="menu-box">
             <IonIcon
               color="primary"
               size="large"
@@ -21,16 +21,16 @@ const MenuGrid: React.FC = () => {
               className="menu-grid-item-icon"
             />
           </IonCol>
-          <IonCol>
+          <IonCol className="menu-box">
             <IonIcon size="large" color="primary" src={bagAddOutline} />
           </IonCol>
-          <IonCol>
+          <IonCol className="menu-box">
             <IonIcon size="large" color="primary" src={cubeOutline} />
           </IonCol>
-          <IonCol>
+          <IonCol className="menu-box">
             <IonIcon size="large" color="primary" src={locationOutline} />
           </IonCol>
-          <IonCol>
+          <IonCol className="menu-box">
             <IonIcon size="large" color="primary" src={cameraOutline} />
           </IonCol>
         </IonRow>

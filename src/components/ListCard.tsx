@@ -35,7 +35,7 @@ const ListCard: React.FC<HorizontalCardProps> = ({
   return (
     <div className="list-container">
       <IonText color={'dark'}>
-        <h5 className="list-title"> {title}</h5>
+        <h5 className="list-title">{title}</h5>
       </IonText>
       {type === 'horizontal' && (
         <IonList className="list-background">

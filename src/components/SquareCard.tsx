@@ -9,8 +9,6 @@ interface ProfileCardProps {
 const SquareCard: React.FC<ProfileCardProps> = ({ name }) => {
   return (
     <div className="ion-padding" scroll-y="false">
-      <div className="square-card-box"></div>
-
       <div className="square-card-wrap">
         <div className="square-card-content">
           <div className="square-card-text">
