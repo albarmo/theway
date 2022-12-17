@@ -1,53 +1,66 @@
 import React from 'react'
-import { IonSlides, IonSlide, IonButton, IonIcon } from '@ionic/react'
-import { star } from 'ionicons/icons'
+import { IonSlides, IonSlide, IonButton, IonIcon, IonText } from '@ionic/react'
+import { camera, earth, homeOutline, personOutline, send } from 'ionicons/icons'
 import './Slider.css'
 
-// Optional parameters to pass to the swiper instance.
-// See https://swiperjs.com/swiper-api for valid options.
 const slideOpts = {
   initialSlide: 0,
-  slidesPerView: 2.8,
+  slidesPerView: 2.5,
   speed: 400,
 }
 
-export const Slider: React.FC = () => (
-  <IonSlides pager={false} options={slideOpts} className="ion-padding slider">
-    <IonSlide>
-      <IonButton className="slider-item">
-        <IonIcon slot="start" icon={star}></IonIcon>
-        Left Icon
-      </IonButton>
-    </IonSlide>
-    <IonSlide>
-      <IonButton>
-        <IonIcon slot="start" icon={star}></IonIcon>
-        Left Icon
-      </IonButton>
-    </IonSlide>
-    <IonSlide>
-      <IonButton>
-        <IonIcon slot="start" icon={star}></IonIcon>
-        Left Icon
-      </IonButton>
-    </IonSlide>
-    <IonSlide>
-      <IonButton>
-        <IonIcon slot="start" icon={star}></IonIcon>
-        Left Icon
-      </IonButton>
-    </IonSlide>
-    <IonSlide>
-      <IonButton>
-        <IonIcon slot="start" icon={star}></IonIcon>
-        Left Icon
-      </IonButton>
-    </IonSlide>
-    <IonSlide>
-      <IonButton>
-        <IonIcon slot="start" icon={star}></IonIcon>
-        Left Icon
-      </IonButton>
-    </IonSlide>
-  </IonSlides>
+interface SliderProps {
+  hasTitle: boolean
+  title?: string
+}
+
+export const Slider: React.FC<SliderProps> = ({
+  hasTitle = false,
+  title,
+}: SliderProps) => (
+  <div>
+    {hasTitle && (
+      <div className="slider-title-box">
+        <IonText className="slider-title">{title}</IonText>
+      </div>
+    )}
+    <IonSlides pager={false} options={slideOpts} className="ion-padding slider">
+      <IonSlide>
+        <IonButton>
+          <IonIcon slot="start" icon={homeOutline}></IonIcon>
+          Building
+        </IonButton>
+      </IonSlide>
+      <IonSlide>
+        <IonButton>
+          <IonIcon slot="start" icon={personOutline}></IonIcon>
+          Organizer
+        </IonButton>
+      </IonSlide>
+      <IonSlide>
+        <IonButton>
+          <IonIcon slot="start" icon={camera}></IonIcon>
+          Photo
+        </IonButton>
+      </IonSlide>
+      <IonSlide>
+        <IonButton>
+          <IonIcon slot="start" icon={homeOutline}></IonIcon>
+          Venue
+        </IonButton>
+      </IonSlide>
+      <IonSlide>
+        <IonButton>
+          <IonIcon slot="start" icon={earth}></IonIcon>
+          Cathering
+        </IonButton>
+      </IonSlide>
+      <IonSlide>
+        <IonButton>
+          <IonIcon slot="start" icon={send}></IonIcon>
+          Invitation
+        </IonButton>
+      </IonSlide>
+    </IonSlides>
+  </div>
 )

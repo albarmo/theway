@@ -1,0 +1,28 @@
+{
+  "id": "8b0390de-9309-4159-9361-19de5d9e8d93",
+  "data": {
+    "id": "89f3da66-abcb-4b0f-bb1d-68ce0faaaa12",
+    "status": "APPROVED",
+    "contact": {
+      "emails": ["john@example.com"],
+      "contactId": "89f3da66-abcb-4b0f-bb1d-68ce0faaaa12"
+    },
+    "profile": {
+      "slug": "johndoe",
+      "nickname": "John Doe"
+    },
+    "contactId": "89f3da66-abcb-4b0f-bb1d-68ce0faaaa12",
+    "loginEmail": "john@example.com",
+    "createdDate": "2021-01-27T11:23:42Z",
+    "updatedDate": "2021-01-27T11:23:42.486Z",
+    "lastLoginDate": "2021-01-27T11:23:43Z",
+    "privacyStatus": "PUBLIC",
+    "activityStatus": "ACTIVE"
+  },
+  "channel": "da3d5eb6-67c5-448d-9951-b3c4e125e7f3_dabd096a-3fd1-47d8-97dc-a234e434c76e_Executed",
+  "metadata": {
+    "internal": {
+      "timestamp": "2022-12-16T07:58:24.839Z"
+    }
+  }
+}

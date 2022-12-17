@@ -5,12 +5,11 @@
   border-radius: 10px;
   background-color: white;
   margin-bottom: 20px;
-  padding: 5px 15px;
-
+  /* padding: 0px 20px; */
   box-shadow: none !important;
 }
 .card-horizontal-tumbnail {
-  width: 40%;
+  width: 30%;
   height: 100%;
   border-radius: 10px;
 }
@@ -22,15 +21,18 @@
 .card-horizontal-body {
   width: 100%;
   line-height: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .ch-title {
-  font-size: large;
+  font-size: 16px;
   font-weight: bold;
   margin-bottom: 4px;
 }
 
 .ch-description {
   width: 100%;
-  font-size: 14px;
+  font-size: 12px;
 }

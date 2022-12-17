@@ -2,3 +2,11 @@
   padding: 0px 0px 20px 20px;
   background-color: #ffff;
 }
+
+.slider-title-box {
+  width: 100%;
+  font-weight: light;
+  background-color: #ffff;
+  margin-left: 20px;
+  padding-top: 10px;
+}

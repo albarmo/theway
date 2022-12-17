@@ -6,7 +6,7 @@ interface ContainerProps {
 
 const ExploreContainer: React.FC<ContainerProps> = ({ name }) => {
   return (
-    <div className="container">
+    <div className="container-box">
       <strong>{name}</strong>
     </div>
   )

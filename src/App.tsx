@@ -11,10 +11,11 @@ import {
   setupIonicReact,
 } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
-import { home, heart, flag, person, addCircle } from 'ionicons/icons'
+import { home, heart, flag, person, search } from 'ionicons/icons'
 import Homepage from './pages/Homepage'
-import Tab2 from './pages/Tab2'
-import Tab3 from './pages/Tab3'
+import Like from './pages/Like'
+import PlanPage from './pages/Plan'
+import Profile from './pages/Profile'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css'
@@ -34,6 +35,8 @@ import '@ionic/react/css/display.css'
 
 /* Theme variables */
 import './theme/variables.css'
+import LoginPage from './pages/Auth/Login'
+import RegisterPage from './pages/Auth/Register'
 
 setupIonicReact()
 
@@ -45,28 +48,34 @@ const App: React.FC = () => (
           <Route exact path="/">
             <Homepage />
           </Route>
-          <Route exact path="/liked">
-            <Tab2 />
+          <Route exact path="/search">
+            <Homepage />
           </Route>
-          <Route path="/add">
-            <Tab3 />
+          <Route exact path="/login">
+            <LoginPage />
+          </Route>
+          <Route exact path="/register">
+            <RegisterPage />
+          </Route>
+          <Route exact path="/liked">
+            <Like />
           </Route>
           <Route path="/plan">
-            <Tab3 />
+            <PlanPage />
           </Route>
           <Route exact path="/profile">
-            <Tab3 />
+            <Profile />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="home" href="/">
             <IonIcon icon={home} />
           </IonTabButton>
+          <IonTabButton tab="home" href="/search">
+            <IonIcon icon={search} />
+          </IonTabButton>
           <IonTabButton tab="liked" href="/liked">
             <IonIcon icon={heart} />
-          </IonTabButton>
-          <IonTabButton tab="add" href="/add">
-            <IonIcon icon={addCircle} size="large" />
           </IonTabButton>
           <IonTabButton tab="plan" href="/plan">
             <IonIcon icon={flag} />

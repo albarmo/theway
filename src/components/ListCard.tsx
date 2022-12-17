@@ -2,8 +2,11 @@ import React, { useState, useEffect } from 'react'
 import {
   IonInfiniteScroll,
   IonInfiniteScrollContent,
+  IonItem,
+  IonLabel,
   IonList,
   IonText,
+  IonThumbnail,
 } from '@ionic/react'
 import './ListCard.css'
 import HorizontalCard from './CardHorizontal'
@@ -11,14 +14,16 @@ import VerticalCard from './CardVertical'
 
 interface HorizontalCardProps {
   title: string
-  type: 'horizontal' | 'vertical'
+  type: 'horizontal' | 'vertical' | 'default'
   isInfinite: boolean
+  hasTitle: boolean
 }
 
 const ListCard: React.FC<HorizontalCardProps> = ({
   title,
-  type,
+  type = 'default',
   isInfinite,
+  hasTitle = false,
 }) => {
   const [items, setItems] = useState<string[]>(['Item 1', 'Item 2', 'Item 3'])
   useEffect(() => {
@@ -34,9 +39,11 @@ const ListCard: React.FC<HorizontalCardProps> = ({
 
   return (
     <div className="list-container">
-      <IonText color={'dark'}>
-        <h5 className="list-title">{title}</h5>
-      </IonText>
+      {hasTitle && (
+        <IonText color={'dark'}>
+          <h5 className="list-title">{title}</h5>
+        </IonText>
+      )}
       {type === 'horizontal' && (
         <IonList className="list-background">
           {items.map((item, index) => (
@@ -53,6 +60,26 @@ const ListCard: React.FC<HorizontalCardProps> = ({
             <div className="list-item" key={item}>
               <VerticalCard name={item} />
             </div>
+          ))}
+        </IonList>
+      )}
+
+      {type === 'default' && (
+        <IonList>
+          {items.map((item, index) => (
+            <IonItem>
+              <IonThumbnail slot="start">
+                <img
+                  alt="Silhouette of mountains"
+                  src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
+                />
+              </IonThumbnail>
+
+              <IonLabel>
+                <h1>Item Thumbnail</h1>
+                <p>Item Thumbnail</p>
+              </IonLabel>
+            </IonItem>
           ))}
         </IonList>
       )}

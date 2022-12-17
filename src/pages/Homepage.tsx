@@ -1,10 +1,11 @@
-import { IonContent, IonInput, IonItem, IonLabel, IonPage } from '@ionic/react'
+import { IonContent, IonPage } from '@ionic/react'
 import ProfileCard from '../components/ProfileCard'
 import MenuGrid from '../components/MenuGrid'
 import ListCard from '../components/ListCard'
-import './Homepage.css'
-import SquareCard from '../components/SquareCard'
 import { Slider } from '../components/Slider'
+import { SliderCard } from '../components/SliderCard'
+import Container from '../components/Container'
+import './Homepage.css'
 
 const Homepage: React.FC = () => {
   return (
@@ -12,24 +13,28 @@ const Homepage: React.FC = () => {
       <IonContent fullscreen color="light">
         <div className="header-home">
           <ProfileCard name="Albar Moerhamsa" />
-          {/* <input
-            placeholder=" Cari targetmu..."
-            className="header-search-input"
-          /> */}
         </div>
-        <IonItem fill="solid">
-          <IonLabel position="floating">Cari targetmu...</IonLabel>
-          <IonInput placeholder="Ketikan judul nya disini..."></IonInput>
-        </IonItem>
-        <Slider />
+        <Slider hasTitle={true} title="Insights" />
         <MenuGrid />
-        <SquareCard name="asd" />
-        <ListCard title="My Plan" type="horizontal" isInfinite={false} />
-        <ListCard
-          title="Recomended Articles"
-          type="vertical"
-          isInfinite={false}
-        />
+        <SliderCard hasTitle={true} title="Top Items" />
+
+        <Container title="My Plan">
+          <ListCard
+            hasTitle={false}
+            title=""
+            type="horizontal"
+            isInfinite={false}
+          />
+        </Container>
+
+        <Container title="Recomended Articles">
+          <ListCard
+            hasTitle={false}
+            title=""
+            type="vertical"
+            isInfinite={false}
+          />
+        </Container>
       </IonContent>
     </IonPage>
   )
