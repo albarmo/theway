@@ -18,3 +18,8 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+ion-avatar.profile-picture {
+  width: 4rem;
+  height: 4rem;
+}

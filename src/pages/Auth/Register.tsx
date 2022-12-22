@@ -10,11 +10,15 @@ import {
   IonSelect,
   IonSelectOption,
   IonText,
+  useIonViewWillEnter,
 } from '@ionic/react'
 import { useState } from 'react'
 import './styles/Register.css'
+import { Link, RouteComponentProps } from 'react-router-dom'
+import { hideTabs } from '../../hooks/displayTabs'
 
-const LoginPage: React.FC = () => {
+const LoginPage: React.FC<RouteComponentProps> = ({ history }) => {
+  useIonViewWillEnter(() => hideTabs())
   const [isTouched, setIsTouched] = useState(false)
   const [isValid, setIsValid] = useState<boolean>()
   const validateEmail = (email: string) => {
@@ -35,15 +39,15 @@ const LoginPage: React.FC = () => {
   return (
     <IonPage>
       <IonContent fullscreen color="light">
-        <div className="login-page">
+        <div className="register-page">
           <IonImg
             className="logo"
             src="https://i.ibb.co/G9HMCG5/The-Way-1024-removebg-preview-2-1.png"
             alt="tw-logo"
           />
-          <div className="login-form">
+          <div className="register-form">
             <IonText>
-              <h1 className="login-title">Hello! Register to get started</h1>
+              <h1 className="register-title">Hello! Register to get started</h1>
             </IonText>
             <IonItem className={`${isTouched && 'ion-touched'}`}>
               <IonInput
@@ -93,16 +97,16 @@ const LoginPage: React.FC = () => {
               />
             </IonItem>
             <IonText>
-              <a className="login-anchor">Forgot password?</a>
+              <a className="register-anchor">Forgot password?</a>
             </IonText>
             <IonButton color={'dark'}>Register Account</IonButton>
           </div>
-          <IonText className="login-bottom-text" color="light">
+          <IonText className="register-bottom-text" color="light">
             <p>
               Already have an account?{' '}
-              <a className="login-anchor" href="/login">
+              <Link to="/login" className="register-anchor">
                 Login Now
-              </a>
+              </Link>
             </p>
           </IonText>
         </div>

@@ -1,6 +1,7 @@
 import {
   IonAvatar,
   IonContent,
+  IonImg,
   IonItem,
   IonLabel,
   IonPage,
@@ -14,8 +15,8 @@ const ProfilePage: React.FC = () => {
     <IonPage>
       <IonContent fullscreen color="light">
         <div className="profile-header">
-          <IonAvatar>
-            <img
+          <IonAvatar className="profile-picture">
+            <IonImg
               alt="Silhouette of a person's head"
               src="https://ionicframework.com/docs/img/demos/avatar.svg"
             />

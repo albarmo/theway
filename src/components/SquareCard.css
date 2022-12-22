@@ -1,5 +1,6 @@
 .square-card-wrap {
   position: relative;
+  height: max-content;
 }
 
 .square-card-wrap:before {

@@ -1,0 +1,38 @@
+ion-text.search-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.search-bar {
+  border-radius: 30px;
+  padding: 0px;
+}
+
+.search-history {
+  margin-top: 10px;
+}
+
+ion-input.searchbar {
+  margin-left: 10px;
+}
+
+ion-badge {
+  --background: rgb(225, 230, 230);
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 30px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.badage-text {
+  font-weight: normal;
+  font-size: medium;
+}
+
+ion-list.search-result {
+  margin-top: 20px;
+  background-color: transparent;
+}

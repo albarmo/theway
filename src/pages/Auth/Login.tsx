@@ -7,11 +7,15 @@ import {
   IonNote,
   IonPage,
   IonText,
+  useIonViewWillEnter,
 } from '@ionic/react'
 import { useState } from 'react'
 import './styles/Login.css'
+import { Link, RouteComponentProps } from 'react-router-dom'
+import { hideTabs } from '../../hooks/displayTabs'
 
-const LoginPage: React.FC = () => {
+const LoginPage: React.FC<RouteComponentProps> = ({ history }) => {
+  useIonViewWillEnter(() => hideTabs())
   const [isTouched, setIsTouched] = useState(false)
   const [isValid, setIsValid] = useState<boolean>()
   const validateEmail = (email: string) => {
@@ -28,6 +32,11 @@ const LoginPage: React.FC = () => {
 
   const markTouched = () => {
     setIsTouched(true)
+  }
+
+  const handleLogin = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault()
+    history.push('/')
   }
   return (
     <IonPage>
@@ -69,12 +78,16 @@ const LoginPage: React.FC = () => {
             <IonText>
               <a className="login-anchor">Forgot password?</a>
             </IonText>
-            <IonButton color={'dark'}>Login</IonButton>
+            <IonButton onClick={(e) => handleLogin(e as any)} color={'dark'}>
+              Login
+            </IonButton>
           </div>
           <IonText className="login-bottom-text" color="light">
             <p>
-              Don’t have an account?{' '}
-              <IonButton className="login-anchor">Register Now</IonButton>
+              Don’t have an account?
+              <Link to="/register" className="login-anchor">
+                Register Now
+              </Link>
             </p>
           </IonText>
         </div>

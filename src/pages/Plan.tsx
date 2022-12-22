@@ -1,11 +1,16 @@
 import {
+  IonBackButton,
+  IonButton,
   IonContent,
+  IonHeader,
+  IonIcon,
   IonInfiniteScroll,
   IonInfiniteScrollContent,
   IonPage,
   IonTitle,
   IonToolbar,
 } from '@ionic/react'
+import { search } from 'ionicons/icons'
 import { useState, useEffect } from 'react'
 import HorizontalCard from '../components/CardHorizontal'
 import Container from '../components/Container'
@@ -25,9 +30,15 @@ const PlanPage: React.FC = () => {
   }, [])
   return (
     <IonPage>
-      <IonToolbar>
-        <IonTitle>My Plans</IonTitle>
-      </IonToolbar>
+      <IonHeader>
+        <IonToolbar>
+          <IonBackButton />
+          <IonTitle>My Plan</IonTitle>
+          <IonButton color={'light'} slot="end">
+            <IonIcon src={search} />
+          </IonButton>
+        </IonToolbar>
+      </IonHeader>
       <IonContent fullscreen color="light">
         <SliderCard hasTitle={true} title="May you Plan this..." />
         <Container title="My Plan">

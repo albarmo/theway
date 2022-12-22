@@ -1,12 +1,16 @@
 import {
+  IonBackButton,
+  IonButton,
   IonContent,
+  IonHeader,
+  IonIcon,
   IonInfiniteScroll,
   IonInfiniteScrollContent,
   IonPage,
-  IonText,
   IonTitle,
   IonToolbar,
 } from '@ionic/react'
+import { search } from 'ionicons/icons'
 import { useState, useEffect } from 'react'
 import HalfCard from '../components/CardHalf'
 import { SliderCard } from '../components/SliderCard'
@@ -25,17 +29,17 @@ const LikePage: React.FC = () => {
   }, [])
   return (
     <IonPage>
-      <IonToolbar>
-        <IonTitle>Liked</IonTitle>
-      </IonToolbar>
+      <IonHeader>
+        <IonToolbar>
+          <IonBackButton />
+          <IonTitle>Loved</IonTitle>
+          <IonButton color={'light'} slot="end">
+            <IonIcon src={search} />
+          </IonButton>
+        </IonToolbar>
+      </IonHeader>
       <IonContent fullscreen color="light">
-        <div className="ion-content-scroll-host">
-          <div className="ion-padding">
-            <IonText>
-              <h1>Liked</h1>
-            </IonText>
-          </div>
-
+        <div className="ion-content-scroll-host ion-padding">
           {items.map((item, index) => (
             <HalfCard name={item} />
           ))}

@@ -12,7 +12,7 @@ import {
 } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 import { home, heart, flag, person, search } from 'ionicons/icons'
-import Homepage from './pages/Homepage'
+import Homepage from './pages/Home'
 import Like from './pages/Like'
 import PlanPage from './pages/Plan'
 import Profile from './pages/Profile'
@@ -37,6 +37,8 @@ import '@ionic/react/css/display.css'
 import './theme/variables.css'
 import LoginPage from './pages/Auth/Login'
 import RegisterPage from './pages/Auth/Register'
+import SearchPage from './pages/Search'
+import ListPage from './pages/ListPage'
 
 setupIonicReact()
 
@@ -49,14 +51,13 @@ const App: React.FC = () => (
             <Homepage />
           </Route>
           <Route exact path="/search">
-            <Homepage />
+            <SearchPage />
           </Route>
-          <Route exact path="/login">
-            <LoginPage />
-          </Route>
-          <Route exact path="/register">
-            <RegisterPage />
-          </Route>
+          <Route path="/login" render={(props) => <LoginPage {...props} />} />
+          <Route
+            path="/register"
+            render={(props) => <RegisterPage {...props} />}
+          />
           <Route exact path="/liked">
             <Like />
           </Route>
@@ -66,12 +67,16 @@ const App: React.FC = () => (
           <Route exact path="/profile">
             <Profile />
           </Route>
+          <Route exact path="/list">
+            <ListPage />
+          </Route>
         </IonRouterOutlet>
-        <IonTabBar slot="bottom">
+
+        <IonTabBar slot="bottom" id="ion-tab-bar">
           <IonTabButton tab="home" href="/">
             <IonIcon icon={home} />
           </IonTabButton>
-          <IonTabButton tab="home" href="/search">
+          <IonTabButton tab="search" href="/search">
             <IonIcon icon={search} />
           </IonTabButton>
           <IonTabButton tab="liked" href="/liked">
@@ -79,7 +84,6 @@ const App: React.FC = () => (
           </IonTabButton>
           <IonTabButton tab="plan" href="/plan">
             <IonIcon icon={flag} />
-            <IonBadge>6</IonBadge>
           </IonTabButton>
           <IonTabButton tab="profile" href="/profile">
             <IonIcon icon={person} />

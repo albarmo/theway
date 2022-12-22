@@ -5,7 +5,7 @@ import './Slider.css'
 
 const slideOpts = {
   initialSlide: 0,
-  slidesPerView: 2.5,
+  slidesPerView: 2.8,
   speed: 400,
 }
 
