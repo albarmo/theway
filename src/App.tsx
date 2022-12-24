@@ -2,7 +2,6 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 import {
   IonApp,
-  IonBadge,
   IonIcon,
   IonRouterOutlet,
   IonTabBar,
@@ -12,10 +11,6 @@ import {
 } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
 import { home, heart, flag, person, search } from 'ionicons/icons'
-import Homepage from './pages/Home'
-import Like from './pages/Like'
-import PlanPage from './pages/Plan'
-import Profile from './pages/Profile'
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css'
@@ -35,10 +30,16 @@ import '@ionic/react/css/display.css'
 
 /* Theme variables */
 import './theme/variables.css'
+
+/* Pages */
 import LoginPage from './pages/Auth/Login'
 import RegisterPage from './pages/Auth/Register'
-import SearchPage from './pages/Search'
-import ListPage from './pages/ListPage'
+import SearchPage from './pages/Search/Search'
+import ListPage from './pages/List/ListPage'
+import Homepage from './pages/Home/Home'
+import Like from './pages/Like/Like'
+import PlanPage from './pages/Plan/index'
+import Profile from './pages/Profile/Profile'
 
 setupIonicReact()
 

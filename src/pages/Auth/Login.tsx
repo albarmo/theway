@@ -10,9 +10,9 @@ import {
   useIonViewWillEnter,
 } from '@ionic/react'
 import { useState } from 'react'
-import './styles/Login.css'
 import { Link, RouteComponentProps } from 'react-router-dom'
 import { hideTabs } from '../../hooks/displayTabs'
+import './styles/Login.css'
 
 const LoginPage: React.FC<RouteComponentProps> = ({ history }) => {
   useIonViewWillEnter(() => hideTabs())

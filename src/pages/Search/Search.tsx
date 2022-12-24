@@ -18,7 +18,7 @@ import {
 import { closeCircle, search } from 'ionicons/icons'
 import { useState, useEffect } from 'react'
 
-import './Search.css'
+import './styles/Search.css'
 
 const SearchPage: React.FC = () => {
   const [items, setItems] = useState<string[]>([])

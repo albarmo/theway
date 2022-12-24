@@ -3,15 +3,9 @@ http://ionicframework.com/docs/theming/ */
 
 /** Ionic CSS Variables **/
 ion-content {
-  --offset-bottom: auto !important;
+  --offset-bottom: none !important;
   --overflow: hidden;
   overflow: auto;
-}
-
-div {
-  -ms-overflow-style: none; /* Edge, Internet Explorer */
-  scrollbar-width: none; /* Firefox */
-  overflow-y: scroll;
 }
 
 div::-webkit-scrollbar {

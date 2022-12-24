@@ -1,4 +1,8 @@
-::-webkit-scrollbar,
+/* ::-webkit-scrollbar,
 *::-webkit-scrollbar {
   display: none;
+} */
+
+ion-page {
+  width: 100vw;
 }

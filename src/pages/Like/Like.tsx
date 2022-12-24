@@ -12,12 +12,11 @@ import {
 } from '@ionic/react'
 import { search } from 'ionicons/icons'
 import { useState, useEffect } from 'react'
-import HorizontalCard from '../components/CardHorizontal'
-import Container from '../components/Container'
-import { SliderCard } from '../components/SliderCard'
-import './Plan.css'
+import HalfCard from '../../components/CardHalf'
+import { SliderCard } from '../../components/SliderCard'
+import './styles/Like.css'
 
-const PlanPage: React.FC = () => {
+const LikePage: React.FC = () => {
   const [items, setItems] = useState<string[]>([])
 
   useEffect(() => {
@@ -33,28 +32,28 @@ const PlanPage: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonBackButton />
-          <IonTitle>My Plan</IonTitle>
+          <IonTitle>Loved</IonTitle>
           <IonButton color={'light'} slot="end">
             <IonIcon src={search} />
           </IonButton>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen color="light">
-        <SliderCard hasTitle={true} title="May you Plan this..." />
-        <Container title="My Plan">
+        <div className="ion-content-scroll-host ion-padding">
           {items.map((item, index) => (
-            <HorizontalCard name={item} />
+            <HalfCard name={item} />
           ))}
-          <IonInfiniteScroll>
-            <IonInfiniteScrollContent
-              loadingText="Please wait..."
-              loadingSpinner="bubbles"
-            ></IonInfiniteScrollContent>
-          </IonInfiniteScroll>
-        </Container>
+        </div>
+        <IonInfiniteScroll>
+          <IonInfiniteScrollContent
+            loadingText="Please wait..."
+            loadingSpinner="bubbles"
+          ></IonInfiniteScrollContent>
+        </IonInfiniteScroll>
+        <SliderCard hasTitle={true} title="May you like this..." />
       </IonContent>
     </IonPage>
   )
 }
 
-export default PlanPage
+export default LikePage

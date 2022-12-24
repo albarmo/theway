@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from 'react'
 import {
-  IonPage,
+  IonBackButton,
+  IonButton,
   IonContent,
-  IonText,
-  IonItem,
+  IonHeader,
   IonIcon,
-  IonInput,
-  IonBadge,
-  IonList,
-  IonCard,
-  IonCardHeader,
-  IonCardTitle,
-  IonCardSubtitle,
-  IonCardContent,
   IonInfiniteScroll,
   IonInfiniteScrollContent,
+  IonPage,
+  IonTitle,
+  IonToolbar,
 } from '@ionic/react'
-import { search, closeCircle } from 'ionicons/icons'
+import { search } from 'ionicons/icons'
+import { useState, useEffect } from 'react'
+import HorizontalCard from '../../components/CardHorizontal'
+import Container from '../../components/Container'
+import { SliderCard } from '../../components/SliderCard'
+import './styles/Plan.css'
 
-const PlanPage = () => {
+const PlanPage: React.FC = () => {
   const [items, setItems] = useState<string[]>([])
+
   useEffect(() => {
     const newItems = []
-    for (let i = 1; i < 10; i++) {
+    for (let i = 1; i < 5; i++) {
       newItems.push(`Item ${items.length + i}`)
     }
     setItems([...items, ...newItems])
@@ -30,63 +30,28 @@ const PlanPage = () => {
   }, [])
   return (
     <IonPage>
-      <IonContent fullscreen color="light ion-padding">
-        <IonText className="search-title">
-          <p>Search</p>
-        </IonText>
-        <div>
-          <IonItem className="search-bar" lines="none">
-            <IonIcon src={search} color={'medium'} />
-            <IonInput placeholder="Find here..." className="searchbar" />
-            <IonIcon src={closeCircle} color={'medium'} />
-          </IonItem>
-          <div className="search-history">
-            <IonText>
-              <h5>History</h5>
-            </IonText>
-            {[
-              'test',
-              'perumahan',
-              'wisata bandung',
-              'nikah murah',
-              'paket 50 juta',
-            ].map((item, index) => (
-              <IonBadge className="history" key={index}>
-                <IonText color={'medium'} className="badage-text">
-                  {item}
-                </IonText>
-              </IonBadge>
-            ))}
-          </div>
-        </div>
-        <IonList className="search-result">
-          <IonText>
-            <h5>Hasil pencarian</h5>
-          </IonText>
+      <IonHeader>
+        <IonToolbar>
+          <IonBackButton />
+          <IonTitle>My Plan</IonTitle>
+          <IonButton color={'light'} slot="end">
+            <IonIcon src={search} />
+          </IonButton>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent fullscreen color="light">
+        <SliderCard hasTitle={true} title="May you Plan this..." />
+        <Container title="My Plan">
           {items.map((item, index) => (
-            <IonCard>
-              <img
-                alt="Silhouette of mountains"
-                src="https://ionicframework.com/docs/img/demos/card-media.png"
-              />
-              <IonCardHeader>
-                <IonCardTitle>Card Title</IonCardTitle>
-                <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
-              </IonCardHeader>
-
-              <IonCardContent>
-                Here's a small text description for the card content. Nothing
-                more, nothing less.
-              </IonCardContent>
-            </IonCard>
+            <HorizontalCard name={item} />
           ))}
-        </IonList>
-        <IonInfiniteScroll>
-          <IonInfiniteScrollContent
-            loadingText="Please wait..."
-            loadingSpinner="bubbles"
-          ></IonInfiniteScrollContent>
-        </IonInfiniteScroll>
+          <IonInfiniteScroll>
+            <IonInfiniteScrollContent
+              loadingText="Please wait..."
+              loadingSpinner="bubbles"
+            ></IonInfiniteScrollContent>
+          </IonInfiniteScroll>
+        </Container>
       </IonContent>
     </IonPage>
   )
