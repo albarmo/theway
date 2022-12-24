@@ -1,13 +1,21 @@
-import { IonContent, IonGrid, IonInput, IonItem, IonPage } from '@ionic/react'
+import { IonContent, IonIcon, IonInput, IonItem, IonPage } from '@ionic/react'
+import { search } from 'ionicons/icons'
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import GridCard from '../../components/CardGrid'
 import HalfCard from '../../components/CardHalf'
-import Container from '../../components/Container'
 import ListCard from '../../components/ListCard'
 import MenuGrid from '../../components/MenuGrid'
 import { SliderCard } from '../../components/SliderCard'
+import { useCapitalizedString } from '../../hooks/useCapitalized'
 import './styles/List.css'
 
+type ListParams = {
+  category: string
+}
+
 const ListPage: React.FC = () => {
+  let { category } = useParams<ListParams>()
   const [items, setItems] = useState<string[]>([])
 
   useEffect(() => {
@@ -22,25 +30,22 @@ const ListPage: React.FC = () => {
     <IonPage>
       <IonContent fullscreen color="light">
         <div className="list-page-header">
-          <h1>Buildings</h1>
-          <p>Enter everything here</p>
+          <h1>{useCapitalizedString(category)}</h1>
+          <p>Find {category} vendors here</p>
+          <IonItem className="input-box" lines="none">
+            <IonIcon src={search} size="small" color={'medium'} />
+            <IonInput className="input-search" placeholder="Find here..." />
+          </IonItem>
+          <MenuGrid />
         </div>
-        <MenuGrid />
-        <IonItem className="input-box" lines="none">
-          <IonInput
-            className="input-search"
-            color={'dark'}
-            placeholder="Find here..."
-          />
-        </IonItem>
         <SliderCard hasTitle={true} title="Hot Items" />
-        <Container title={''} hasTitle={false}>
-          <div className="grid">
+        <div className="ion-padding">
+          <div className="grids">
             {items.map((item, index) => (
-              <HalfCard name={item} />
+              <GridCard name={item} />
             ))}
           </div>
-        </Container>
+        </div>
       </IonContent>
     </IonPage>
   )

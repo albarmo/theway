@@ -68,7 +68,7 @@ const App: React.FC = () => (
           <Route exact path="/profile">
             <Profile />
           </Route>
-          <Route exact path="/list">
+          <Route exact path="/list/:category">
             <ListPage />
           </Route>
         </IonRouterOutlet>

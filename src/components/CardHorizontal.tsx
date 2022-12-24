@@ -14,12 +14,13 @@ interface HorizontalCardProps {
 const HorizontalCard: React.FC<HorizontalCardProps> = ({ name }) => {
   return (
     <IonCard className="card-horizontal">
-      <IonThumbnail className="card-horizontal-tumbnail">
+      <div className="card-horizontal-box-img">
         <img
+          className="card-horizontal-img"
           alt="Silhouette of mountains"
           src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
         />
-      </IonThumbnail>
+      </div>
       <IonCardContent className="card-horizontal-body">
         <IonCardTitle class="ch-title">Card Title</IonCardTitle>
         <IonText className="ch-description">
@@ -31,18 +32,3 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({ name }) => {
 }
 
 export default HorizontalCard
-
-// <div className="card-horizontal">
-//     <IonThumbnail className="card-horizontal-tumbnail">
-//       <img
-//         alt="Silhouette of mountains"
-//         src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-//       />
-//     </IonThumbnail>
-//     <div className="card-horizontal-body">
-//       <IonText className="ch-title">{name}</IonText>
-//       <IonLabel>
-//         Rolade is an ever-expanding ecosystem of interconnected apps and
-//       </IonLabel>
-//     </div>
-//   </div>

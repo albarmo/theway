@@ -17,6 +17,7 @@ import {
 } from '@ionic/react'
 import { closeCircle, search } from 'ionicons/icons'
 import { useState, useEffect } from 'react'
+import GridCard from '../../components/CardGrid'
 
 import './styles/Search.css'
 
@@ -66,6 +67,11 @@ const SearchPage: React.FC = () => {
           <IonText>
             <h5>Hasil pencarian</h5>
           </IonText>
+          <div className="grids">
+            {items.map((item, index) => (
+              <GridCard name={item} />
+            ))}
+          </div>
           {items.map((item, index) => (
             <IonCard>
               <img

@@ -1,6 +1,14 @@
 import React from 'react'
 import { IonSlides, IonSlide, IonButton, IonIcon, IonText } from '@ionic/react'
-import { camera, earth, homeOutline, personOutline, send } from 'ionicons/icons'
+import {
+  camera,
+  earth,
+  home,
+  homeOutline,
+  list,
+  personOutline,
+  send,
+} from 'ionicons/icons'
 import './Slider.css'
 
 const slideOpts = {
@@ -14,6 +22,15 @@ interface SliderProps {
   title?: string
 }
 
+const CATEGORIES = [
+  { id: 0, title: 'Building', path: 'building', icon: home },
+  { id: 1, title: 'Organizer', path: 'organizer', icon: personOutline },
+  { id: 2, title: 'Photo', path: 'photo', icon: camera },
+  { id: 3, title: 'Venue', path: 'venue', icon: earth },
+  { id: 4, title: 'Cathering', path: 'cathering', icon: list },
+  { id: 5, title: 'Invitation', path: 'invitation', icon: send },
+]
+
 export const Slider: React.FC<SliderProps> = ({
   hasTitle = false,
   title,
@@ -25,42 +42,14 @@ export const Slider: React.FC<SliderProps> = ({
       </div>
     )}
     <IonSlides pager={false} options={slideOpts} className="ion-padding slider">
-      <IonSlide>
-        <IonButton>
-          <IonIcon slot="start" icon={homeOutline}></IonIcon>
-          Building
-        </IonButton>
-      </IonSlide>
-      <IonSlide>
-        <IonButton>
-          <IonIcon slot="start" icon={personOutline}></IonIcon>
-          Organizer
-        </IonButton>
-      </IonSlide>
-      <IonSlide>
-        <IonButton>
-          <IonIcon slot="start" icon={camera}></IonIcon>
-          Photo
-        </IonButton>
-      </IonSlide>
-      <IonSlide>
-        <IonButton>
-          <IonIcon slot="start" icon={homeOutline}></IonIcon>
-          Venue
-        </IonButton>
-      </IonSlide>
-      <IonSlide>
-        <IonButton>
-          <IonIcon slot="start" icon={earth}></IonIcon>
-          Cathering
-        </IonButton>
-      </IonSlide>
-      <IonSlide>
-        <IonButton>
-          <IonIcon slot="start" icon={send}></IonIcon>
-          Invitation
-        </IonButton>
-      </IonSlide>
+      {CATEGORIES.map((item) => (
+        <IonSlide key={item.id}>
+          <IonButton routerLink={`/list/${item.path}`}>
+            <IonIcon slot="start" icon={item.icon}></IonIcon>
+            {item.title}
+          </IonButton>
+        </IonSlide>
+      ))}
     </IonSlides>
   </div>
 )

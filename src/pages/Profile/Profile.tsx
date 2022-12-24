@@ -51,14 +51,18 @@ const ProfilePage: React.FC = () => {
           ))}
         </Container>
         <Container title="" hasTitle={false}>
-          <IonText>
-            <h3 className="header-menu">Account Setting</h3>
-          </IonText>
-          {[1, 2, 3].map((item, index) => (
-            <IonItem href="#" lines="none">
-              <IonLabel>Anchor Item {index}</IonLabel>
-            </IonItem>
-          ))}
+          <IonItem href="/login" lines="none">
+            <IonLabel>Logout Account</IonLabel>
+          </IonItem>
+          <IonItem href="/register" lines="none">
+            <IonLabel>Register Vendors</IonLabel>
+          </IonItem>
+          <IonItem href="/register" lines="none">
+            <IonLabel>Joint the Force</IonLabel>
+          </IonItem>
+          <IonItem href="/register" lines="none">
+            <IonLabel>FAQ</IonLabel>
+          </IonItem>
         </Container>
       </IonContent>
     </IonPage>

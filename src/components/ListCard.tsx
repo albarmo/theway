@@ -13,7 +13,7 @@ import HorizontalCard from './CardHorizontal'
 import VerticalCard from './CardVertical'
 
 interface HorizontalCardProps {
-  title: string
+  title?: string
   type: 'horizontal' | 'vertical' | 'default'
   isInfinite: boolean
   hasTitle: boolean
