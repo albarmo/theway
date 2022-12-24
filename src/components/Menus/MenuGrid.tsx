@@ -5,19 +5,18 @@ import {
   cubeOutline,
   locationOutline,
   mailOutline,
-  storefrontOutline,
 } from 'ionicons/icons'
 import './MenuGrid.css'
 
-const MenuGrid: React.FC = () => {
-  const CATEGORIES = [
-    { id: 1, title: 'Organizer', path: 'organizer', icon: bagAddOutline },
-    { id: 2, title: 'Photo', path: 'photo', icon: cubeOutline },
-    { id: 3, title: 'Venue', path: 'venue', icon: locationOutline },
-    { id: 4, title: 'Cathering', path: 'cathering', icon: cameraOutline },
-    { id: 5, title: 'Invitation', path: 'invitation', icon: mailOutline },
-  ]
+const CATEGORIES = [
+  { id: 1, title: 'Organizer', path: 'organizer', icon: bagAddOutline },
+  { id: 2, title: 'Photo', path: 'photo', icon: cubeOutline },
+  { id: 3, title: 'Venue', path: 'venue', icon: locationOutline },
+  { id: 4, title: 'Cathering', path: 'cathering', icon: cameraOutline },
+  { id: 5, title: 'Invitation', path: 'invitation', icon: mailOutline },
+]
 
+const MenuGrid: React.FC = () => {
   return (
     <div className="menu-grid-container">
       <IonGrid>

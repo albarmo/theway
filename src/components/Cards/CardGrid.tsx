@@ -1,15 +1,10 @@
 import {
-  IonButton,
-  IonCard,
   IonCardContent,
   IonCardHeader,
-  IonCardSubtitle,
   IonCardTitle,
-  IonIcon,
   IonText,
 } from '@ionic/react'
-import { bookmarkOutline } from 'ionicons/icons'
-import './CardGrid.css'
+import './styles/CardGrid.css'
 
 interface VerticalCardProps {
   name?: string

@@ -6,18 +6,20 @@ import {
   IonCardSubtitle,
   IonCardTitle,
   IonContent,
-  IonIcon,
+  IonHeader,
   IonInfiniteScroll,
   IonInfiniteScrollContent,
-  IonInput,
   IonItem,
   IonList,
   IonPage,
+  IonProgressBar,
+  IonSearchbar,
   IonText,
+  IonTitle,
+  IonToolbar,
 } from '@ionic/react'
-import { closeCircle, search } from 'ionicons/icons'
 import { useState, useEffect } from 'react'
-import GridCard from '../../components/CardGrid'
+import GridCard from '../../components/Cards/CardGrid'
 
 import './styles/Search.css'
 
@@ -32,41 +34,56 @@ const SearchPage: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const data = ['Amsterdam', 'Buenos Aires', 'Cairo']
+  let [results, setResults] = useState([...data])
+
+  const handleChange = (ev: Event) => {
+    let query = ''
+    const target = ev.target as HTMLIonSearchbarElement
+    if (target) query = target.value!.toLowerCase()
+
+    setResults(data.filter((d) => d.toLowerCase().indexOf(query) > -1))
+  }
+
   return (
     <IonPage>
-      <IonContent fullscreen color="light ion-padding">
-        <IonText className="search-title">
-          <p>Search</p>
-        </IonText>
-        <div>
-          <IonItem className="search-bar" lines="none">
-            <IonIcon src={search} color={'medium'} />
-            <IonInput placeholder="Find here..." className="searchbar" />
-            <IonIcon src={closeCircle} color={'medium'} />
-          </IonItem>
-          <div className="search-history">
-            <IonText>
-              <h5>History</h5>
-            </IonText>
-            {[
-              'test',
-              'perumahan',
-              'wisata bandung',
-              'nikah murah',
-              'paket 50 juta',
-            ].map((item, index) => (
-              <IonBadge className="history" key={index}>
-                <IonText color={'medium'} className="badage-text">
-                  {item}
-                </IonText>
-              </IonBadge>
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>Search</IonTitle>
+        </IonToolbar>
+        <IonToolbar>
+          <IonSearchbar
+            debounce={1000}
+            onIonChange={(ev) => handleChange(ev)}
+          ></IonSearchbar>
+          <IonList>
+            {results.map((result) => (
+              <IonItem>{result}</IonItem>
             ))}
+          </IonList>
+          <div className="ion-padding">
+            <div className="search-history">
+              {[
+                'test',
+                'perumahan',
+                'wisata bandung',
+                'nikah murah',
+                'paket 50 juta',
+              ].map((item, index) => (
+                <IonBadge className="history" key={index}>
+                  <IonText color={'medium'} className="badage-text">
+                    {item}
+                  </IonText>
+                </IonBadge>
+              ))}
+            </div>
           </div>
-        </div>
+          <IonProgressBar type="indeterminate"></IonProgressBar>
+        </IonToolbar>
+      </IonHeader>
+
+      <IonContent fullscreen color="light ion-padding">
         <IonList className="search-result">
-          <IonText>
-            <h5>Hasil pencarian</h5>
-          </IonText>
           <div className="grids">
             {items.map((item, index) => (
               <GridCard name={item} />
@@ -82,7 +99,6 @@ const SearchPage: React.FC = () => {
                 <IonCardTitle>Card Title</IonCardTitle>
                 <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
               </IonCardHeader>
-
               <IonCardContent>
                 Here's a small text description for the card content. Nothing
                 more, nothing less.

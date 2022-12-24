@@ -1,0 +1,14 @@
+ion-slides.onboard {
+  height: 100vh;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.swiper-slide h2 {
+  margin-top: 2.8rem;
+}

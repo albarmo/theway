@@ -7,7 +7,7 @@ import {
   IonPage,
   IonText,
 } from '@ionic/react'
-import Container from '../../components/Container'
+import Container from '../../components/Common/Container'
 import './styles/Profile.css'
 
 const ProfilePage: React.FC = () => {

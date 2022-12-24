@@ -9,7 +9,7 @@ import {
   IonText,
 } from '@ionic/react'
 import { bookmarkOutline } from 'ionicons/icons'
-import './CardHalf.css'
+import './styles/CardHalf.css'
 
 interface VerticalCardProps {
   name?: string
@@ -17,7 +17,7 @@ interface VerticalCardProps {
 
 const HalfCard: React.FC<VerticalCardProps> = ({ name }) => {
   return (
-    <IonCard className="card-half">
+    <IonCard className="card-half" routerLink={`detail/item/1`}>
       <IonCardHeader className="card-half-header">
         <img
           className="card-half-image"
@@ -29,7 +29,6 @@ const HalfCard: React.FC<VerticalCardProps> = ({ name }) => {
           Card Subtitle
         </IonCardSubtitle>
       </IonCardHeader>
-
       <IonCardContent className="card-half-content">
         <IonText className="half-card-price" color="primary">
           Rp 20.000.000

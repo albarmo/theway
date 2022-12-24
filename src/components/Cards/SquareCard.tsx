@@ -1,6 +1,6 @@
 import { IonText, IonIcon } from '@ionic/react'
 import { starOutline } from 'ionicons/icons'
-import './SquareCard.css'
+import './styles/SquareCard.css'
 
 interface ProfileCardProps {
   name: string

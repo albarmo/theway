@@ -1,11 +1,5 @@
-import {
-  IonCard,
-  IonCardContent,
-  IonCardTitle,
-  IonText,
-  IonThumbnail,
-} from '@ionic/react'
-import './CardHorizontal.css'
+import { IonCard, IonCardContent, IonCardTitle, IonText } from '@ionic/react'
+import './styles/CardHorizontal.css'
 
 interface HorizontalCardProps {
   name: string
@@ -13,14 +7,7 @@ interface HorizontalCardProps {
 
 const HorizontalCard: React.FC<HorizontalCardProps> = ({ name }) => {
   return (
-    <IonCard className="card-horizontal">
-      <div className="card-horizontal-box-img">
-        <img
-          className="card-horizontal-img"
-          alt="Silhouette of mountains"
-          src="https://ionicframework.com/docs/img/demos/thumbnail.svg"
-        />
-      </div>
+    <IonCard className="card-horizontal" routerLink={`detail/item/1`}>
       <IonCardContent className="card-horizontal-body">
         <IonCardTitle class="ch-title">Card Title</IonCardTitle>
         <IonText className="ch-description">

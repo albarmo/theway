@@ -9,8 +9,8 @@ import {
   IonThumbnail,
 } from '@ionic/react'
 import './ListCard.css'
-import HorizontalCard from './CardHorizontal'
-import VerticalCard from './CardVertical'
+import HorizontalCard from '../Cards/CardHorizontal'
+import VerticalCard from '../Cards/CardVertical'
 
 interface HorizontalCardProps {
   title?: string

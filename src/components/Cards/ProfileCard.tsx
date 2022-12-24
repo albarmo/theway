@@ -1,5 +1,5 @@
 import { IonText, IonAvatar } from '@ionic/react'
-import './ProfileCard.css'
+import './styles/ProfileCard.css'
 
 interface ProfileCardProps {
   name: string

@@ -35,11 +35,13 @@ import './theme/variables.css'
 import LoginPage from './pages/Auth/Login'
 import RegisterPage from './pages/Auth/Register'
 import SearchPage from './pages/Search/Search'
-import ListPage from './pages/List/ListPage'
+import ListPage from './pages/Common/List'
 import Homepage from './pages/Home/Home'
 import Like from './pages/Like/Like'
 import PlanPage from './pages/Plan/index'
 import Profile from './pages/Profile/Profile'
+import DetailPage from './pages/Common/Detail'
+import OnBoardingPage from './pages/OnBoarding/OnBoarding'
 
 setupIonicReact()
 
@@ -50,6 +52,9 @@ const App: React.FC = () => (
         <IonRouterOutlet>
           <Route exact path="/">
             <Homepage />
+          </Route>
+          <Route exact path="/onboard">
+            <OnBoardingPage />
           </Route>
           <Route exact path="/search">
             <SearchPage />
@@ -70,6 +75,9 @@ const App: React.FC = () => (
           </Route>
           <Route exact path="/list/:category">
             <ListPage />
+          </Route>
+          <Route exact path="/detail/:category/:id">
+            <DetailPage />
           </Route>
         </IonRouterOutlet>
 

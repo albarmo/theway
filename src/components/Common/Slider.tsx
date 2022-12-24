@@ -1,14 +1,6 @@
 import React from 'react'
 import { IonSlides, IonSlide, IonButton, IonIcon, IonText } from '@ionic/react'
-import {
-  camera,
-  earth,
-  home,
-  homeOutline,
-  list,
-  personOutline,
-  send,
-} from 'ionicons/icons'
+import { camera, earth, home, list, personOutline, send } from 'ionicons/icons'
 import './Slider.css'
 
 const slideOpts = {

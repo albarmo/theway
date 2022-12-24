@@ -1,7 +1,7 @@
 import React from 'react'
 import { IonSlides, IonSlide, IonText } from '@ionic/react'
 import './SliderCard.css'
-import HalfCard from './CardHalf'
+import HalfCard from '../Cards/CardHalf'
 
 const slideOpts = {
   initialSlide: 0,

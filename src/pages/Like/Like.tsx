@@ -12,8 +12,8 @@ import {
 } from '@ionic/react'
 import { search } from 'ionicons/icons'
 import { useState, useEffect } from 'react'
-import HalfCard from '../../components/CardHalf'
-import { SliderCard } from '../../components/SliderCard'
+import HalfCard from '../../components/Cards/CardHalf'
+import { SliderCard } from '../../components/Common/SliderCard'
 import './styles/Like.css'
 
 const LikePage: React.FC = () => {

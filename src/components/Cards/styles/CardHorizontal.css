@@ -8,7 +8,7 @@
 }
 
 .card-horizontal-box-img {
-  width: 50%;
+  width: 40%;
   height: 100%;
 }
 
@@ -24,19 +24,19 @@
 .card-horizontal-body {
   width: 100%;
   height: 100%;
-  line-height: 1;
+  line-height: 1.5;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 .ch-title {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 4px;
 }
 
 .ch-description {
   width: 100%;
-  font-size: 12px;
+  font-size: 16px;
 }

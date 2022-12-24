@@ -12,9 +12,9 @@ import {
 } from '@ionic/react'
 import { search } from 'ionicons/icons'
 import { useState, useEffect } from 'react'
-import HorizontalCard from '../../components/CardHorizontal'
-import Container from '../../components/Container'
-import { SliderCard } from '../../components/SliderCard'
+import HorizontalCard from '../../components/Cards/CardHorizontal'
+import Container from '../../components/Common/Container'
+import { SliderCard } from '../../components/Common/SliderCard'
 import './styles/Plan.css'
 
 const PlanPage: React.FC = () => {
