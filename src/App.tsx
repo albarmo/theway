@@ -42,6 +42,7 @@ import PlanPage from './pages/Plan/index'
 import Profile from './pages/Profile/Profile'
 import DetailPage from './pages/Common/Detail'
 import OnBoardingPage from './pages/OnBoarding/OnBoarding'
+import PlanDetail from './pages/Plan/PlanDetail'
 
 setupIonicReact()
 
@@ -69,6 +70,9 @@ const App: React.FC = () => (
           </Route>
           <Route path="/plan">
             <PlanPage />
+          </Route>
+          <Route path="/plan/:id">
+            <PlanDetail />
           </Route>
           <Route exact path="/profile">
             <Profile />

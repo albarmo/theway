@@ -3,13 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@capacitor/app": "4.1.1",
-    "@capacitor/core": "4.6.1",
+    "@capacitor/android": "^4.6.1",
+    "@capacitor/app": "^4.1.1",
+    "@capacitor/core": "^4.6.1",
     "@capacitor/geolocation": "^4.1.0",
     "@capacitor/google-maps": "^4.3.2",
-    "@capacitor/haptics": "4.1.0",
-    "@capacitor/keyboard": "4.1.0",
-    "@capacitor/status-bar": "4.1.1",
+    "@capacitor/haptics": "^4.1.0",
+    "@capacitor/ios": "^4.6.1",
+    "@capacitor/keyboard": "^4.1.0",
+    "@capacitor/status-bar": "^4.1.1",
     "@ionic/react": "^6.0.0",
     "@ionic/react-router": "^6.0.0",
     "@testing-library/jest-dom": "^5.11.9",
@@ -68,7 +70,7 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "4.6.1"
+    "@capacitor/cli": "^4.6.1"
   },
   "description": "An Ionic project"
 }

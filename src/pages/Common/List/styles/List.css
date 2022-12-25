@@ -4,10 +4,9 @@
   padding: 20px;
 }
 
-ion-item.input-box {
+ion-item.input-box-item {
   margin-top: 30px;
   border-radius: 10px;
-  --background: rgba(225, 230, 230, 0.32);
 }
 
 ion-input.input-search {

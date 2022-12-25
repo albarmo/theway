@@ -1,0 +1,38 @@
+.plan-image-header {
+  height: 300px;
+  overflow: hidden;
+  padding: 15px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.plan-content {
+  background-color: #ffffff;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin-top: -80px;
+  position: relative;
+  padding: 20px;
+}
+
+.plan-content-items {
+  margin-top: 40px;
+}
+
+.plan-content-items-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-button {
+  height: 40px;
+  width: 40px;
+  font-size: 10px;
+}
+
+ion-item.input-box-item {
+  margin-top: 30px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}

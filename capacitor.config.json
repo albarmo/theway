@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "theway",
-	"webDir": "build",
-	"bundledWebRuntime": false
+  "appId": "io.theway.android",
+  "appName": "theWay",
+  "webDir": "build",
+  "bundledWebRuntime": false
 }

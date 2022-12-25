@@ -1,0 +1,6 @@
+{
+	"appId": "io.theway.android",
+	"appName": "theWay",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}
