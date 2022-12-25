@@ -99,7 +99,9 @@ const LoginPage: React.FC<RouteComponentProps> = ({ history }) => {
             <IonText>
               <a className="register-anchor">Forgot password?</a>
             </IonText>
-            <IonButton color={'dark'}>Register Account</IonButton>
+            <IonButton color={'dark'} routerLink="/login">
+              Register Account
+            </IonButton>
           </div>
           <IonText className="register-bottom-text" color="light">
             <p>

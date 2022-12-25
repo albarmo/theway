@@ -2,7 +2,7 @@ import { IonButton } from '@ionic/react'
 import './Container.css'
 
 type ContainerProps = {
-  title: string
+  title?: string
   children?: React.ReactNode
   hasTitle?: boolean
 }

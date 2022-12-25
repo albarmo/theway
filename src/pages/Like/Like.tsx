@@ -41,7 +41,7 @@ const LikePage: React.FC = () => {
       <IonContent fullscreen color="light">
         <div className="ion-content-scroll-host ion-padding">
           {items.map((item, index) => (
-            <HalfCard name={item} />
+            <HalfCard type="default" name={item} />
           ))}
         </div>
         <IonInfiniteScroll>

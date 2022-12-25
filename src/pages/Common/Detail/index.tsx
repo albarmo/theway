@@ -49,6 +49,7 @@ const DetailPage = () => {
                 size="small"
                 color="light"
                 fill="outline"
+                routerLink="/"
               >
                 <IonIcon src={arrowBack} />
               </IonButton>

@@ -25,7 +25,6 @@ import './styles/PlanDetail.css'
 
 const PlanDetail = () => {
   const [items, setItems] = useState<string[]>(['Item 1', 'Item 2', 'Item 3'])
-
   React.useEffect(() => {
     const newItems = []
     for (let i = 1; i < 5; i++) {
@@ -85,7 +84,7 @@ const PlanDetail = () => {
             <IonBackButton defaultHref="#"></IonBackButton>
           </IonButtons>
           <IonButtons slot="primary">
-            <IonButton fill="outline">
+            <IonButton fill="outline" routerLink="/form/plan">
               <IonIcon icon={addOutline}></IonIcon>
             </IonButton>
           </IonButtons>

@@ -2,7 +2,7 @@
   background-color: rebeccapurple;
   background: linear-gradient(146.69deg, #0066ff -3.38%, #5196ff 100%);
   width: 100%;
-  height: max-content;
+  height: 100vh;
   padding: 40px 20px;
   display: flex;
   justify-content: space-between;

@@ -1,5 +1,12 @@
-import { IonContent, IonIcon, IonInput, IonItem, IonPage } from '@ionic/react'
-import { search } from 'ionicons/icons'
+import {
+  IonButton,
+  IonContent,
+  IonIcon,
+  IonInput,
+  IonItem,
+  IonPage,
+} from '@ionic/react'
+import { arrowBack, search } from 'ionicons/icons'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import GridCard from '../../../components/Cards/CardGrid'
@@ -28,6 +35,14 @@ const ListPage: React.FC = () => {
     <IonPage>
       <IonContent fullscreen color="light">
         <div className="list-page-header">
+          <IonButton
+            className="detail-box-header-button"
+            size="small"
+            fill="outline"
+            routerLink="/"
+          >
+            <IonIcon src={arrowBack} />
+          </IonButton>
           <h1>{useCapitalizedString(category)}</h1>
           <p>Find {category} vendors here</p>
           <IonItem className="input-box" lines="none">

@@ -43,6 +43,8 @@ import Profile from './pages/Profile/Profile'
 import DetailPage from './pages/Common/Detail'
 import OnBoardingPage from './pages/OnBoarding/OnBoarding'
 import PlanDetail from './pages/Plan/PlanDetail'
+import PlanForm from './pages/Plan/PlanForm'
+import BlogDetail from './pages/Blog/BlogDetail'
 
 setupIonicReact()
 
@@ -74,6 +76,9 @@ const App: React.FC = () => (
           <Route path="/plan/:id">
             <PlanDetail />
           </Route>
+          <Route path={['/form/plan', '/form/plan/:id']}>
+            <PlanForm />
+          </Route>
           <Route exact path="/profile">
             <Profile />
           </Route>
@@ -82,6 +87,9 @@ const App: React.FC = () => (
           </Route>
           <Route exact path="/detail/:category/:id">
             <DetailPage />
+          </Route>
+          <Route exact path="/detail/blog/1">
+            <BlogDetail />
           </Route>
         </IonRouterOutlet>
 

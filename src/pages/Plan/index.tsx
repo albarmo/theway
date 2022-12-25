@@ -43,7 +43,7 @@ const PlanPage: React.FC = () => {
         <SliderCard hasTitle={true} title="May you Plan this..." />
         <Container title="My Plan">
           {items.map((item, index) => (
-            <HorizontalCard name={item} />
+            <HorizontalCard type="plan" name={item} />
           ))}
           <IonInfiniteScroll>
             <IonInfiniteScrollContent

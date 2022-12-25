@@ -14,16 +14,20 @@ import VerticalCard from '../Cards/CardVertical'
 
 interface HorizontalCardProps {
   title?: string
-  type: 'horizontal' | 'vertical' | 'default'
+  style: 'horizontal' | 'vertical' | 'default'
   isInfinite: boolean
   hasTitle: boolean
+  type: 'plan' | 'vendor' | 'blog' | 'task' | 'default'
+  item?: any
 }
 
 const ListCard: React.FC<HorizontalCardProps> = ({
   title,
-  type = 'default',
+  style = 'default',
   isInfinite,
   hasTitle = false,
+  type = 'default',
+  item,
 }) => {
   const [items, setItems] = useState<string[]>(['Item 1', 'Item 2', 'Item 3'])
   useEffect(() => {
@@ -44,27 +48,27 @@ const ListCard: React.FC<HorizontalCardProps> = ({
           <h5 className="list-title">{title}</h5>
         </IonText>
       )}
-      {type === 'horizontal' && (
+      {style === 'horizontal' && (
         <IonList className="list-background">
           {items.map((item, index) => (
             <div className="list-item" key={item}>
-              <HorizontalCard name={item} />
+              <HorizontalCard type={type} name={item} />
             </div>
           ))}
         </IonList>
       )}
 
-      {type === 'vertical' && (
+      {style === 'vertical' && (
         <IonList className="list-background">
           {items.map((item, index) => (
             <div className="list-item" key={item}>
-              <VerticalCard name={item} />
+              <VerticalCard type={type} name={item} />
             </div>
           ))}
         </IonList>
       )}
 
-      {type === 'default' && (
+      {style === 'default' && (
         <IonList>
           {items.map((item, index) => (
             <IonItem>

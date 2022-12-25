@@ -26,16 +26,16 @@ export const SliderCard: React.FC<SliderCardProps> = ({
     )}
     <IonSlides pager={false} options={slideOpts}>
       <IonSlide>
-        <HalfCard />
+        <HalfCard type="default" />
       </IonSlide>
       <IonSlide>
-        <HalfCard />
+        <HalfCard type="default" />
       </IonSlide>
       <IonSlide>
-        <HalfCard />
+        <HalfCard type="default" />
       </IonSlide>
       <IonSlide>
-        <HalfCard />
+        <HalfCard type="default" />
       </IonSlide>
     </IonSlides>
   </div>

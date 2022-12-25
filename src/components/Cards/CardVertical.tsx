@@ -9,11 +9,13 @@ import './styles/CardVertical.css'
 
 interface VerticalCardProps {
   name?: string
+  type: 'plan' | 'vendor' | 'blog' | 'task' | 'default'
+  item?: any
 }
 
-const VerticalCard: React.FC<VerticalCardProps> = ({ name }) => {
+const VerticalCard: React.FC<VerticalCardProps> = ({ name, type, item }) => {
   return (
-    <IonCard className="card-vertical" routerLink={`detail/item/1`}>
+    <IonCard className="card-vertical" routerLink={`detail/${type}}/1`}>
       <img
         alt="Silhouette of mountains"
         src="https://ionicframework.com/docs/img/demos/card-media.png"

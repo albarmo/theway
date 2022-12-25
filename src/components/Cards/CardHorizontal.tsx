@@ -3,11 +3,17 @@ import './styles/CardHorizontal.css'
 
 interface HorizontalCardProps {
   name: string
+  type: 'plan' | 'vendor' | 'blog' | 'task' | 'default'
+  item?: any
 }
 
-const HorizontalCard: React.FC<HorizontalCardProps> = ({ name }) => {
+const HorizontalCard: React.FC<HorizontalCardProps> = ({
+  name,
+  type = 'default',
+  item,
+}) => {
   return (
-    <IonCard className="card-horizontal" routerLink={`detail/item/1`}>
+    <IonCard className="card-horizontal" routerLink={`/${type}/1`}>
       <IonCardContent className="card-horizontal-body">
         <IonCardTitle class="ch-title">Card Title</IonCardTitle>
         <IonText className="ch-description">

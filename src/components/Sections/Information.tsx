@@ -30,7 +30,7 @@ const CATEGORIES = [
 
 const slideOpts = {
   initialSlide: 0,
-  slidesPerView: 3.3,
+  slidesPerView: 3.4,
   speed: 400,
 }
 

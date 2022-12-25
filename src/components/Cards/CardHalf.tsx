@@ -13,11 +13,13 @@ import './styles/CardHalf.css'
 
 interface VerticalCardProps {
   name?: string
+  type: 'plan' | 'vendor' | 'blog' | 'task' | 'default'
+  item?: any
 }
 
-const HalfCard: React.FC<VerticalCardProps> = ({ name }) => {
+const HalfCard: React.FC<VerticalCardProps> = ({ name, type, item }) => {
   return (
-    <IonCard className="card-half" routerLink={`detail/item/1`}>
+    <IonCard className="card-half" routerLink={`detail/${type}/1`}>
       <IonCardHeader className="card-half-header">
         <img
           className="card-half-image"
